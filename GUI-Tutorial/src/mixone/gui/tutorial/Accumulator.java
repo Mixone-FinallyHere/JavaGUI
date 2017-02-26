@@ -15,33 +15,34 @@ public class Accumulator extends Frame implements ActionListener {
    // Constructor to setup the GUI components and event handlers
    public Accumulator() {
       setLayout(new FlowLayout());
-         // "super" Frame (a Container) sets layout to FlowLayout, which arranges
-         // the components from left-to-right, and flow to next row from top-to-bottom.
+      // FlowLayout: arranges the components from left-to-right, 
+      // and flow to next row from top-to-bottom.
  
       lblInput = new Label("Enter an Integer: "); // Construct Label
-      add(lblInput);               // "super" Frame adds Label
+      add(lblInput);               // Frame adds Label
  
       tfInput = new TextField(10); // Construct TextField
-      add(tfInput);                // "super" Frame adds TextField
+      add(tfInput);                // Frame adds TextField
       
  
       tfInput.addActionListener(this);
-         // tfInput is the source object that fires ActionEvent when entered.
-         // The source add "this" instance as an ActionEvent listener, which provides
-         //  an ActionEvent handler called actionPerformed().
-         // Hitting enter on tfInput invokes actionPerformed().
+	 // tfInput is the source object that fires ActionEvent when entered.
+	 // The source add "this" instance as an ActionEvent listener, which provides
+	 //  an ActionEvent handler called actionPerformed().
+	 // Hitting enter on tfInput invokes actionPerformed().
  
       lblOutput = new Label("The Accumulated Sum is: ");  // allocate Label
-      add(lblOutput);               // "super" Frame adds Label
+      add(lblOutput);               // Frame adds Label
  
       tfOutput = new TextField(10); // allocate TextField
       tfOutput.setEditable(false);  // read-only
-      add(tfOutput);                // "super" Frame adds TextField
+      add(tfOutput);                // Frame adds TextField
       
       btnReset = new Button("Reset");   // construct the Button component
-      add(btnReset);                    // "super" Frame adds Button
+      add(btnReset);                    // Frame adds Button
       btnReset.addActionListener(new BtnResetListener());
       
+      // Add an Window Listener so that we can actually close the window.
       addWindowListener( new WindowAdapter() {
           @Override
           public void windowClosing(WindowEvent we) {
