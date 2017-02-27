@@ -59,8 +59,7 @@ public class Counter extends Frame implements ActionListener {
    // The entry main() method
    public static void main(String[] args) {
       // Invoke the constructor to setup the GUI, by allocating an instance
-      Counter app = new Counter();
-         // or simply "new AWTCounter();" for an anonymous instance
+      new Counter();
    }
  
    // ActionEvent handler - Called back upon button-click.
